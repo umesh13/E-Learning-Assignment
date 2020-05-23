@@ -1,0 +1,11 @@
+footer {
+margin-top = 5px;
+}
+li {
+	background-color: #32CD32;
+	display : flex;
+}
+
+h1 {
+	color: #111111;
+}
