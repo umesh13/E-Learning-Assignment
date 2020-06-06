@@ -1,0 +1,136 @@
+Binary Number System
+ In mathematics, the binary number system uses 2 as the basis and thus needs only two distinct symbols for its digits, 0 and 1, instead of the usual 10 different symbols used in the decimal system. 0 and 1,these two digits can represent any number.Consequently the numbers from 0 to 10 in Decimal Number System are in binary 0 , 1, 10, 11, 100, 101 upto 1010. The binary number system contributes to  information theory and computer technology areas where 0s and 1s can be expressed in two-state in electromechanical devices — like "on-off," Binary number arithmetic means addition , subtraction , multiplication, and division operations. Binary arithmetic operation starts from the most minor bits, i.e. from the most right.
+
+Application of Binary Number System
+	 Binary Number System laid the foundation for Computer system as computer understands and operates on Binary Digits ie 0 and 1.Every operations performed involves the binary number syatem and its use is inevitable.
+	 1.Digital Encoding 
+	 	Word(ASCII Value),Picture(RGB values),Videos(Series of Images) are encoded using Binary number so they can be stored in Computer Memory for long term use.
+	 2.Data Transmission
+	 	Before transmission through phyical device like wire, datea are converted into Binary Digits(Bits) before transmission
+	 3.Integrated Circuits use them in Logic Gates
+	 	Logic Gates Perform Binary Operations on the Binary Numbers to produce required final output.
+
+ Above mentioned applications are equally important and are vast to be described here.I am selecting the Error Correction Mechanism in Data Transmission section which should be enough to cover the purpose of this assignment.
+
+For Error Detection and Correction Mechanism used in Electronic data transfer,A Mechanism known as parity Bits is used.
+ 
+Parity  Bits
+	A parity bit is a test bit, applied to a data block for purposes of error detection.This helps to
+	verify data integrity.
+	The value of the parity bit is either allocated 0 or 1 which makes the
+	number of 1s either even or odd depending on the parity form in the message block.
+	Parity test is only appropriate
+	for detection of single bit errors.IN 8 Bit Data transmission , 1st bit is parity bit and remaning 7 bits are data 
+	example : In 01111111 0 is Parity  bit and other digits are actual bits to be transferred
+
+The two forms of tests for parity are
+	Even Parity − The total number of bits in the message is even before transmission
+	Odd Parity − The total number of bits in the message is odd before transmission 
+
+	Creation of Parity Bit( At the Sender End)
+	The sender counts the number of 1s in it when constructing a frame and adds the parity bit in the following way 
+	1.Even parity : Only if the number of 1s is even then the value of the parity bit is 0.When number 1s is odd, value of the parity bit is 1 which is added in Most Significant Bits place and the remaning bits are Data so number of 1s is always even for transmission
+	Example : 
+	a.We have a 7-bit data 1010110 for transmission which has 4 1s so 0 is added in MSB place
+	Original Data - 1010110  
+	Number of 1s - 4
+	Added Parity  Bit - 0
+	Data with Parity  Bit - 01010110
+	Number of 1s with Parity  Bit - 4 (Even)
+
+	b.We have a 7-bit data 1110110 for transmission which has 5 1s so 1 is added in MSB place
+	Original Data - 1010110  
+	Number of 1s - 5
+	Added Parity  Bit - 1
+	Data with Parity  Bit - 11110110
+	Number of 1s with Parity  Bit - 6 (Even)
+
+	2.Even parity : Only if the number of 1s is odd then the value of the parity bit is 0.When number 1s is even, value of the parity bit is 1 which is added in Most Significant Bits place and the remaning bits are Data so number of 1s is always odd for transmission
+	Example : 
+	a.We have a 7-bit data 1010110 for transmission which has 4 1s so 1 is added in MSB place
+	Original Data - 1010110  
+	Number of 1s - 4
+	Added Parity  Bit - 1
+	Data with Parity  Bit - 11010110
+	Number of 1s with Parity  Bit - 5 (Odd)
+
+	b.We have a 7-bit data 1110110 for transmission which has 5 1s so 0 is added in MSB place
+	Original Data - 1010110  
+	Number of 1s - 5
+	Added Parity  Bit - 0
+	Data with Parity  Bit - 01110110
+	Number of 1s with Parity  Bit -  5 (Odd)
+
+
+	Checking of Parity  Bit 
+	In the Reciver's End, the recived  data is checked for accuracy.
+	a.Even Parity 
+	  If the total number of 1's are even then the data is correct else the bits might be tempered during transaction, so the bits are transferred again from sender.
+	a.Odd Parity 
+	  If the total number of 1's are odd then the data is correct else the bits might be tempered during transaction, so the bits are transferred again from sender.
+
+ 
+ Algorithm for Checking the Correct transmission if Data at Recever's End
+ 	1.Start
+ 	2.Input Sender's Data sData,Sender Temporary Data sTempData, 1's sum sOneSum
+ 	3.While (sData>0) :
+ 			print sData % 10
+ 			store sData % 10 in sTempData (sTempData = sData % 10) 
+ 			if sTempData is 1 : 
+ 				add one to sOneSum // sOneSum = sOneSum +1
+ 			divide sData by 10 // sData = sData / 10
+ 	4.Print sOneSum
+ 	5.Input Reciver's Data rData,Reciver Temporary Data rTempData, 1's sum rOneSum
+ 	6.While (rData>0) :
+ 			print rData % 10
+ 			store rData % 10 in rTempData (rTempData = rData % 10) 
+ 			if sTempData is 1 : 
+ 				add one to rOneSum // sOneSum = sOneSum +1
+ 			divide rData by 10 // rData = rData / 10
+ 	7.Print rOneSum
+ 	8.If rOneSum and sOneSum is equal :
+ 		Print 'The Transmission was correct'
+ 	  else :
+ 	  	Print 'The Data was tempered and should be resubmitted'
+
+ FlowChart
+ Image : Flowchart
+
+ Checking of Algorithm using Trace Table
+ Example 1 :
+ Data at Sender's End (sData) : 10101011
+ Data at Reciver's End (rData) : 10101011
+
+ Image :Trace Table 1
+
+ Number of 1's in Sender's Data(sOneData): 5
+ Number of 1's in Reciver's Data (rOneData) : 5
+
+ since sOneData = rOneData , the data is transmitted correctly
+
+  Example 2 :
+ Data at Sender's End (sData) : 11001101
+ Data at Reciver's End (rData) : 10001101
+
+ Image :Trace Table 2
+
+ Number of 1's in Sender's Data(sOneData): 5
+ Number of 1's in Reciver's Data (rOneData) : 4
+
+ since sOneData != rOneData , the data is not transmitted correctly and must be retransmitted.
+
+
+ Conclusion :
+ 	Above Illustration shows one of the many application area of Binary Number system used in the field of Computer Science
+ 	But the above method is not flawless as it only count number of 1's but not their position , so if the number are interchanged only this method is unable to detect any error.
+
+ Contribution of Team Member :
+ 	This whole Report is concluded by solo research and study of Mr. Sudip Sapkota (KOI ID : 11902068)
+
+ Refrences :
+ 1.Application of Binary Number System : https://www.ukessays.com/essays/sciences/applications-of-binary-numbers.php
+ 2.What is a Parity Bit? : https://www.tutorialspoint.com/what-is-a-parity-bit
+
+
+
+
