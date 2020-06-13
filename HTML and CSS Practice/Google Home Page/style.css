@@ -1,0 +1,168 @@
+body{
+	padding: 0px;
+	margin: 0px;
+	color: #222;
+	font-family: arial,sans-serif;
+}
+
+/*Start of Header CSS*/
+
+header{
+	font-size: 0.8rem;
+}
+nav {
+	text-align: right;
+}
+nav ul{
+	list-style-type: none;
+	padding: 5px;
+}
+.headertext{
+	margin-top: 0px;
+}
+nav ul li {
+	display: inline;
+	padding: 0.5rem;
+	margin-top: 0rem;
+}
+
+nav ul li a{
+	 text-decoration: none;
+	 color: #000;
+}
+
+nav ul li a:hover{
+	text-decoration:underline;
+	color: #1100dd;
+}
+
+.materialicon {
+	color: #000;
+	text-decoration:none;
+}
+
+/*End of Header CSS*/
+
+
+/*Start of Body CSS*/
+
+.center{
+	text-align: center;
+}
+
+.image{
+	margin-top: 7rem;
+}
+
+.search {
+	margin: 2rem;
+}
+
+.search input[type=text]{
+	width: 40%;
+	border-radius: 1.5rem;
+	padding: 0.8rem;
+	 font-family: FontAwesome;
+	 border:1px solid rgba(0,0,0,0.1);
+}
+
+.search input[type=text]{
+	
+}
+
+.buttons a {
+	font-size: 0.9rem;
+	background-color: rgba(198, 198, 198, 0.2);
+	text-decoration: none;
+	padding: 0.7rem;
+	margin: 0.3rem;
+	color: rgba(0,0,0,.6);
+	border-radius: 5px;
+
+}
+
+.buttons a:hover{
+	color: rgba(0,0,0,0.7);
+	border : 1px solid rgba(0,0,0,0.15);
+	background-color: rgba(198, 198, 198, 0.1)
+}
+
+.center .language{
+	margin: 2.2rem;
+	margin-bottom: 7.5rem;
+	font-size: 0.75rem;
+}
+
+.language a {
+	text-decoration: none;
+}
+
+.language a:hover {
+	text-decoration: underline;
+}
+
+/*End of Body CSS*/
+
+footer {
+	font-size: 10.5pt;
+	background-color: rgba(198, 198, 198, 0.5);
+}
+
+footer div ul li {
+	list-style-type: none;
+	display: inline;
+	padding: 0.75rem;
+}
+
+.upperfooter{
+	border: 1px solid rgba(0,0,0,0.1);
+}
+
+.upperfooter ul li {
+	color: rgba(0,0,0,.54);
+	padding: 5px;
+}
+
+.lowerfooter{
+	padding: 1px;
+}
+
+.lowerfooterleft{
+	text-align: left;
+	display: inline;
+}
+
+.lowerfooterright{
+	float: right;
+	display: inline;
+}
+
+.lowerfooterleft li a, .lowerfooterright li a{
+	color: rgba(0,0,0,.54);
+	text-decoration: none;
+}
+
+.lowerfooterleft li a:hover, .lowerfooterright li a:hover{
+	text-decoration: underline;
+}
+
+/*CSS for Small Screen*/
+@media screen and (max-width: 700px) {
+
+.search {
+  	margin : 1rem;
+  }
+
+  .search input[type=text]{
+	width: 70%;
+}
+
+/*Part of Lowerfooter will not float to right*/
+  .lowerfooterright {
+    float: none;
+    display: inline;
+  }
+
+}
+
+
