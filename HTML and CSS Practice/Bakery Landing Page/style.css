@@ -1,0 +1,138 @@
+body{
+	font-family: 'Sriracha', cursive;
+	background-color: #556677;
+}
+
+/*Utility Class*/
+.img-responsive{
+	max-width: 100%;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.secimage{
+	background: url(image/cover.jpg) no-repeat;
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+}
+
+.secwrapper{
+	color: #f8b195;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.secwrapper h1{
+	font-size: 2.4rem;
+	text-align: center;
+
+}
+
+.form {
+	text-align: center;
+}
+
+.form .form_input {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: 2rem;
+	padding: .3rem;
+	width: 50%;
+	border:none;
+}
+
+ .form .button_post {
+ 	color: #f8b195;
+	border-radius: 0.7rem;
+	padding : 0.5rem;
+	background-color: transparent;
+	margin:1rem auto 0rem;
+	border-color: #4444bb;
+}
+
+/*Product Section*/
+
+.product {
+	display: flex;
+	flex-wrap: wrap;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: .3rem;
+}
+
+.product_heading{
+	text-align: center;
+}
+
+.product_list {
+	/*flex : 1;*/
+	float: left;
+	margin-right: 0.6rem;
+	width: 32%
+}
+
+.product_list:last-child {
+	margin-right: 0rem;
+}
+
+footer {
+	width: 90%;
+	/*Body Color overrides this background image*/
+	background: url(image/footer.jpg) no-repeat;
+	background-size: cover;
+}
+
+.left{
+	float : left;
+	margin-left: 1.5rem;
+	display: block;
+}
+
+.right{
+	float : right;
+	display: block;
+	margin-right: 1rem;
+}
+
+.companyintro ul li{
+	list-style-type: none;
+	padding: 0.4rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.copyright ul li{
+	list-style-type: none;
+	padding: 0.4rem;
+}
+
+@media screen and (max-width: 700px){
+	/*Not accepted and search box size is not changing*/
+	.form_input{
+		width: 200px;
+	}
+
+	.product_list{
+		width: 100%;
+		float: none;
+	}
+
+	.left{
+		/*margin left stays what it was previously despite of this code*/
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 500px){
+
+	.form_input{
+		width: 300px;
+	}
+}
+
